@@ -8,8 +8,8 @@ const app = express();
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(cors());
-const DB = "mongodb://127.0.0.1:27017/learn";
-const MongoClient = require('mongodb').MongoClient;
+// const DB = "mongodb://127.0.0.1:27017/learn";
+// const MongoClient = require('mongodb').MongoClient;
 
 
 var con = mysql.createConnection({
