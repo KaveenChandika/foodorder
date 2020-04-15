@@ -42,3 +42,9 @@ export const getProducts = () =>{
     }
 }
 
+export const addUsers = (data) =>{
+    return function (dispatch){
+        axios.post("http://localhost:5001/api/addUsers",{userData:data})
+    }
+}
+
