@@ -36,6 +36,15 @@ app.post('/api/addUsers',(req,res) =>{
   });
 })
 
+app.get('/api/viewUsers',(req,res)=>{
+  con.connect(function(err){
+    var sql = "SELECT * FROM tbl_user tu WHERE tu.status=0";
+    con.query(sql,function(err,result){
+      res.send(result)
+    })
+  });
+})
+
 
 
 /**

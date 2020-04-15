@@ -9,8 +9,12 @@ const userReducer = (state=initialState,action) => {
                 return{
                     status:!state.status
                 }
+            case 'VIEW_USERS':
+                return{
+                    users:action.payload
+                }
             default :
-                return states
+                return state
         }
 }
 
