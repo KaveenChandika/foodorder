@@ -45,6 +45,10 @@ app.get('/api/viewUsers',(req,res)=>{
   });
 })
 
+app.get('/api/getEditUser',(req,res)=>{
+  
+})
+
 
 
 /**
