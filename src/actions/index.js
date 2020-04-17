@@ -52,7 +52,7 @@ export const viewUsers = () =>{
     return function (dispatch){
         axios.get("http://localhost:5001/api/viewUsers")
         .then((res)=>{
-            dispatch({type:'VIEW_USERS',payload:res})
+            dispatch({type:'VIEW_USERS',payload:res.data})
         })
     }
 }

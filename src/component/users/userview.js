@@ -22,11 +22,17 @@ class UserView extends Component{
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
+                        {
                             this.props.userData.map(function(user,index){
-                                
+                                return <tr>
+                                     <td>{user.fname}</td>
+                                     <td>{user.address}</td>
+                                     <td>{user.email}</td>
+                                     <td>{user.nic}</td>
+                                     <td>{user.tel}</td>
+                                </tr>
                             })
-                        } */}
+                        }
                     </tbody>
                 </table>
             </div>
