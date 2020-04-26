@@ -45,8 +45,11 @@ app.get('/api/viewUsers',(req,res)=>{
   });
 })
 
-app.get('/api/getEditUser',(req,res)=>{
-  
+app.get('/api/getEditUser/:id',(req,res)=>{
+  console.log(req.params.id);
+  // con.connect(function(err){
+  //   var sql = "SELECT * FROM tbl_user tu WHERE tu.u_status0 AND tu."
+  // });
 })
 
 

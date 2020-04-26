@@ -13,6 +13,10 @@ const userReducer = (state=initialState,action) => {
                 return{
                     users:action.payload
                 }
+            case 'EDIT_USER':
+                return{
+                    
+                }
             default :
                 return state
         }

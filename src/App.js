@@ -5,6 +5,7 @@ import AddProduct from './component/product/add';
 import EditProduct from './component/product/edit';
 import UserAdd from './component/users/useradd';
 import UserView from './component/users/userview';
+import UserEdit from './component/users/useredit';
 import {connect} from 'react-redux';
 class App extends Component{
   render(){
@@ -27,6 +28,9 @@ class App extends Component{
                   <li class="nav-item active">
                     <Link class="nav-link"  to="/add">Product Add</Link>
                   </li>
+                  <li class="nav-item active">
+                    <Link class="nav-link"  to="/userEdit"></Link>
+                  </li>`
                 </ul>
               </div>
             </nav>
@@ -40,6 +44,7 @@ class App extends Component{
             <Route path="/edit/:id" exact component={EditProduct}></Route>
             <Route path="/userAdd" exact component={UserAdd}></Route>
             <Route path="/userView" exact component={UserView}></Route>
+            <Route path="/userEdit/:id" exact  component={UserEdit}></Route>
             <br/><br/>
           </div>
       </BrowserRouter>
