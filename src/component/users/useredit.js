@@ -1,4 +1,6 @@
 import React , {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 class UserEdit extends Component{
     render(){
@@ -12,6 +14,7 @@ class UserEdit extends Component{
                         className="form-control input-sm" 
                         name="name" 
                         placeholder="Full Name" 
+                        defaultValue={this.props.fname}
                         />
                     <br/>
                     <textarea 
@@ -20,6 +23,7 @@ class UserEdit extends Component{
                         className="forma-control input-sm"
                         name="address"
                         rows="4"
+                        defaultValue={this.props.address}
                         placeholder="Address"/>
                     <br/>                    
                     <input 
@@ -27,6 +31,7 @@ class UserEdit extends Component{
                         style={{width:300,padding:2}}
                         className="form-control input-sm"
                         name="email"
+                        defaultValue={this.props.email}
                         placeholder="Email"
                     />
                     <br/>
@@ -35,6 +40,7 @@ class UserEdit extends Component{
                         style={{width:300,padding:2}}
                         className="form-control input-sm"
                         name="nic"
+                        defaultValue={this.props.nic}
                         placeholder="NIC"
                     />
                     <br/>
@@ -43,6 +49,7 @@ class UserEdit extends Component{
                         style={{width:300,padding:2}}
                         className="form-control input-sm"
                         name="tel"
+                        defaultValue={this.props.tel}
                         placeholder="Tel"
                     />
                     <br/>
@@ -51,6 +58,7 @@ class UserEdit extends Component{
                         style={{width:300,padding:2}}
                         className="form-control input-sm"
                         name="uname"
+                        defaultValue={this.props.uname}
                         placeholder="Username"
                     />
                     <br/>
@@ -75,4 +83,21 @@ class UserEdit extends Component{
     }
 }
 
-export default UserEdit;
+function mapStateToProps (state){
+    // console.log(state.userRed.fname);
+    return{
+        fname:state.userRed.fname,
+        address:state.userRed.address,
+        email:state.userRed.email,
+        nic:state.userRed.nic,
+        tel:state.userRed.tel,
+        uname:state.userRed.username
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return {
+
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(UserEdit);

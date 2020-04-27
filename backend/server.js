@@ -46,10 +46,13 @@ app.get('/api/viewUsers',(req,res)=>{
 })
 
 app.get('/api/getEditUser/:id',(req,res)=>{
-  console.log(req.params.id);
-  // con.connect(function(err){
-  //   var sql = "SELECT * FROM tbl_user tu WHERE tu.u_status0 AND tu."
-  // });
+   var id = (req.params.id);
+  con.connect(function(err){
+    var sql = `SELECT * FROM tbl_user tu WHERE tu.status=0 AND tu.u_id='${id}'`;
+    con.query(sql,function(err,result){
+      res.send(result);
+    })
+  });
 })
 
 

@@ -61,7 +61,7 @@ export const editUser = (id) =>{
     return function (dispatch){
         axios.get(`http://localhost:5001/api/getEditUser/${id}`)
         .then((res)=>{
-
+            dispatch({type:'EDIT_USERS',payload:res.data})
         });
     }
 }

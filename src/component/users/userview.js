@@ -11,9 +11,9 @@ class UserView extends Component{
 
     useredit = (e) =>{
          e.preventDefault();
-         var id = e.target 
+         var id = e.target.getAttribute('data-id');
 
-        this.props.editUser(id)
+        this.props.editUser(id);
         this.props.history.push('/userEdit/'+id);
     }
     render(){
@@ -40,7 +40,7 @@ class UserView extends Component{
                                      <td>{user.nic}</td>
                                      <td>{user.tel}</td>
                                      <td>
-                                         <input type="button" style={{width:50,padding:2}} value="Edit" className="btn btn-info" onClick={this.useredit.bind(this)} />
+                                         <input type="button" style={{width:50,padding:2}} value="Edit" data-id={user.u_id} className="btn btn-info" onClick={this.useredit.bind(this)} />
                                      </td>
                                      <td>
                                         <input type="button" style={{width:70,padding:2,paddingLeft:10}} value="Delete" className="btn btn-info" />
@@ -65,7 +65,7 @@ function mapStateToProps(state){
 const mapDispatchToProps = (dispatch) =>{
     return{
         viewUsers:bindActionCreators(()=>viewUsers(),dispatch),
-        editUser:bindActionCreators(()=>editUser(),dispatch)
+        editUser:bindActionCreators((id)=>editUser(id),dispatch)
     }
 }
 
