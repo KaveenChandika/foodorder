@@ -17,7 +17,8 @@ class UserAdd extends Component{
             pwd:e.target.pwd.value
         }
         this.props.addUsers(data);
-        window.location.reload();
+        window.location.href='/userView';
+        // window.location.reload();
     }
 
     render(){
