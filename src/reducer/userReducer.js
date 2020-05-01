@@ -6,7 +6,8 @@ const initialState ={
     email:"",
     nic:"",
     tel:"",
-    username:""
+    username:"",
+    u_id:""
 }
 
 const userReducer = (state=initialState,action) => {
@@ -26,7 +27,12 @@ const userReducer = (state=initialState,action) => {
                     email:action.payload[0].email,
                     nic:action.payload[0].nic,
                     tel:action.payload[0].tel,
-                    username:action.payload[0].username
+                    username:action.payload[0].username,
+                    u_id:action.payload[0].u_id
+                }
+            case 'UPDATE_USER':
+                return{
+                    
                 }
             default :
                 return state

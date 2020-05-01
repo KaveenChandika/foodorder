@@ -65,3 +65,9 @@ export const editUser = (id) =>{
         });
     }
 }
+
+export const updateUser = (updateData) =>{
+    return function (dispatch){
+        axios.post('http://localhost:5001/api/updateUser',{data:updateData});
+    }
+}
